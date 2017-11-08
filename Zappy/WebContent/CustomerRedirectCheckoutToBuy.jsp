@@ -6,39 +6,53 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-
 <head>
-<%  
- HttpSession customss=request.getSession();
-String customersession=(String)customss.getAttribute("CustomerSession");
- 
-if(customersession!=null)
-		{
-			out.println(customersession);
-			response.sendRedirect("CheckoutController");
-		}
-else 
-	
-	if(customersession==null){
-			RequestDispatcher rd=request.getRequestDispatcher("CustomerLogin.jsp");
-			request.setAttribute("loginfirst","Please login First");
-			rd.forward(request, response);
-}%>
 
- <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Zappy</title>
-    </head>
- <body bgcolor="#ffe6cc">
+ <%  
+String m=(String)request.getAttribute("msg");
+%>
+
+</head>
 
 
+<body bgcolor="#ffe6cc">
 
-
-</body> 
- 
- 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+   <a href="ZappyProductsController" ><img src="zappy-logo.png"   width="110px" height="70px" alt="logo" /></a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li><a href="ZappyProductsController">Zappy Home</a></li>
+	         <li><a href="CustomerLogin.jsp">Customer Login</a></li>
+	        <li><a href="CustomerRegistration.jsp">SignUp</a></li> 
+	         </ul>  
+    </div>
+  </div>
+</nav>
     
-</html>
+        
+     <h2 align="left">${loginfirst}</h2>
+ <% if(m!=null)
+	out.println(m);
+%>
+        
+        <center>
+        <table>
+       <tr><td>
+        <h1>Login Page</h1>
+        
+            <h2>Customer Login </h2> </td></tr>
+            
+           <form action="CustomerRedirectCheckoutToBuy" method="post">
+        <tr>
+        <td>User Mobile or Email:<input type="text" maxlength="10"  pattern="[0-9]{10}" name="Cid" required/></td></tr>
+            <tr> <td>Password:<input type="password" name="Cpwd" required></td></tr>
+         <tr> <td>  <input type="submit" value="Submit"></td></tr>
+            </form>
+        </center>
  
+</table>
+</body>
+</html>
