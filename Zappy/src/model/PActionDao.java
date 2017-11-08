@@ -168,13 +168,20 @@ try {
 	
 	
 	if(session==null) {
+		
+		System.out.println("Inside model removeCart session null hai so ip se remove krwa rahe hai "+ipAddress);
+		
+		
 	ps=con.prepareStatement("delete from cart where cartid=? and ipadr=?");
 ps.setInt(1, cartid);
 ps.setString(2, ipAddress);
 	}
 	else if(session!=null) 
+		
 	{
-		ps=con.prepareStatement("delete from cart where cartid=? and ipadr=?");
+		System.out.println("Inside model removeCart session null  nahi * hai so session se remove krwa rahe hai "+session);
+
+		ps=con.prepareStatement("delete from cart where cartid=? and customerId=?");
 		ps.setInt(1, cartid);
 		ps.setString(2, session);
 		
@@ -187,8 +194,6 @@ ps.setString(2, ipAddress);
 	}
 		return x;
 }
-
-
 
 
 //---------view customer pending list--------------

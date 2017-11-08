@@ -30,9 +30,7 @@ if(!Date.parse(valueDate)){
 HttpSession s2=request.getSession();
 String s1=(String)s2.getAttribute("CustomerSession");
 
-HttpSession s3=request.getSession();
-String adminsession=(String)s3.getAttribute("session");
-
+String adminsession=(String)s2.getAttribute("session");
 
 if(s1!=null)
 
@@ -72,7 +70,7 @@ out.print(qnty);
       <ul class="nav navbar-nav">
         <li><a href="ZappyProductsController">Zappy Home</a></li>
         <%
-        if(s1==null)
+        if(s1==null&&adminsession==null)
         {
         	
         	%>
@@ -80,34 +78,30 @@ out.print(qnty);
 	        <li><a href="check_session.jsp">Customer Login</a></li>
 	     	<li><a href="CustomerRegistration.jsp">SignUp</a></li>
 	     		      <li> <a href="AddCartContoller">Show Cart</a></li>
+	     		      
 	     	
 	    
        <%
+       }else if(s1!=null)
+       {
+    	   %>
+		       <li><a href="check_session.jsp">My Home</a></li>
+		       		      <li> <a href="AddCartContoller">Show Cart</a></li>
+		       
+		      <li><a align="right" href="Logout">Logout</a></li>
+		     
+    	   <%
+    	   
+       }else if(adminsession!=null)
+       {
+    	   %>
+		       <li><a href="check_session2.jsp">My Home</a></li>
+		      <li><a align="right" href="Logout">Logout</a></li>
+		     
+    	   <%
+    	   
        }
-        else if(s1!=null)
-        {
-        	%>
-        	   <li><a href="check_session.jsp">My Home</a></li>
-	      <li> <a href="AddCartContoller">Show Cart</a></li>
-	      	       <li><a align="right" href="Logout">Logout</a></li>
-	      
-        	<%
-        	
-        }
-        else if(adminsession!=null)
-        {
-        	%>
-        	   <li><a href="AdminHome.jsp">My Home</a></li>
-	      
-	      	       <li><a align="right" href="Logout">Logout</a></li>
-	      
-        	<%
-        	
-        }
-       
-        %>
-        
-             
+       %>             
 	    
       </ul>  
     </div>

@@ -52,7 +52,7 @@ public class AdminLoginController extends HttpServlet {
 			HttpSession ss=request.getSession();
 			ss.setAttribute("session",u);
 			response.sendRedirect("AdminHome.jsp");
-			System.out.println("session stablished "+u);
+			System.out.println("Admin session stablished "+u);
 		
 		} else
 		{

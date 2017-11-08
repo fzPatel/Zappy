@@ -51,12 +51,13 @@ public class RemoveCart extends HttpServlet {
 		String ipAddress = addr.getHostAddress();
 
 		
-
 		HttpSession ss =request.getSession();
 		String session=(String)ss.getAttribute("CustomerSession");
 		
 		
 		System.out.println("ipaddress at removeCart controller "+ipAddress);
+		System.out.println("session at removeCart controller "+session);
+		
 		
 		PActionDao pd=new PActionDao();
 		int z=pd.removeCart(cartid,session,ipAddress);
