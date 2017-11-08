@@ -149,7 +149,7 @@ if(c!=0)
 				  request.setAttribute("LIST1", list1);
 
 			//	request.setAttribute("cardadded", "cart added");
-				rd.include(request, response);
+				rd.forward(request, response);
 	}
 if(c==0) 
 		

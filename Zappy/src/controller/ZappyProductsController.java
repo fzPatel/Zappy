@@ -29,9 +29,16 @@ public class ZappyProductsController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		
 		AdminDao ad=new AdminDao();
 		ArrayList<Adminbean>list=ad.ViewProducts();	
+		
+		
+		ArrayList<Adminbean>list1=ad.viewCartBox();			
+
+			
 		RequestDispatcher rd=request.getRequestDispatcher("ZappyProducts.jsp");
+		request.setAttribute("LIST1", list1);
 		  request.setAttribute("LIST", list);
 
 		  rd.forward(request, response);

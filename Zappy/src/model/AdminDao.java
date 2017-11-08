@@ -77,6 +77,10 @@ public ArrayList<Adminbean> ViewProducts()
 public ArrayList<Adminbean> viewCartBox()
 
 {
+	
+	int quantity=0;
+	double cal=0.0; 
+	double price;
 	ArrayList<Adminbean> list=new ArrayList<>();     //creating object of Generic arraylist 
 	try {	
 		con=d.start();
@@ -86,10 +90,23 @@ public ArrayList<Adminbean> viewCartBox()
 	while(rs.next())
 {
 		Adminbean e=new Adminbean();
+		
 		e.setPrice(rs.getDouble("price"));
 		e.setQnty(rs.getString("pqntity"));
-		list.add(e);
+		
+				
+		
+		quantity=Integer.parseInt(rs.getString("pqntity"));
+		price=rs.getDouble("pqntity");
+
+		cal=price*quantity;
+
+		
 }
+	
+	System.out.println("Quantity"+quantity);
+	System.out.println("total Price"+cal);
+	
 	con.close();
 	
 		  }catch(SQLException  ex)

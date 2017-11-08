@@ -124,6 +124,8 @@ if(s1!=null){
 out.println("<center>Welcome  "+s1+"</center>");	
 }
 		ArrayList<Adminbean> br=(ArrayList<Adminbean>)request.getAttribute("LIST1");
+		
+		int x=0;
 		if(br!=null)
 		{	
 			
@@ -132,16 +134,22 @@ out.println("<center>Welcome  "+s1+"</center>");
 			for(Adminbean ee:br)
 			{
 				
-			 a=Integer.parseInt(ee.getQnty());
 				
+				x=Integer.parseInt(ee.getQnty());
+				double y=ee.getPrice();
+
+				double multi=x*y;
+				a=a+multi;
 				    
 				    %>
 			
-		<tr> <td>Price</b>=<%=a%>INR</td></tr>
-			<tr> <td>Quantity</b>=<%=ee.getQnty()%></td></tr>
-		
 <%}
-		}else if(br==null)
+		%>
+		<tr> <td>Price</b>=<%=a%>INR</td></tr>
+		<tr> <td>Quantity</b>=<%=x%></td></tr>
+		<%
+		}
+		else if(br==null)
 		{
 		%><td>Empty cart <a href="AddCartContoller">Show Cart</a></td>
 <% 
