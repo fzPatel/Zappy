@@ -9,6 +9,19 @@
 
 
 <head>
+
+
+<style type="text/css">
+
+body{
+background-image:url('https://imgur.com/rB8a2WY.jpg');
+background-size:cover;
+height:100%;
+}
+</style>
+
+
+
 <%  
  HttpSession adminss=request.getSession();
 String adminsession=(String)adminss.getAttribute("session");

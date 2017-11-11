@@ -93,11 +93,19 @@ $(document).ready(function(){
 		});
 		
 	});
-
-	
-	
-
 </script>
+
+
+
+
+<style type="text/css">
+
+body{
+background-image:url('https://imgur.com/rB8a2WY.jpg');
+background-size:cover;
+height:100%;
+}
+</style>
 
  
 
@@ -113,7 +121,7 @@ if(m!=null)
   
   
 
-<body bgcolor="#ffe6cc">
+<body >
 
 
 <nav class="navbar navbar-inverse">
@@ -150,7 +158,7 @@ cellspacing="2"border="1">
 <tr>
 <td>Name</td>
 
-<td><input type="text" name="Cname"  pattern="[A-Za-z- ]+" title="only alphabet" placeholder="Enter Your Name"	required/></td>
+<td><input type="text" name="Cname"  pattern="[A-Za-z-]+" title="only alphabet" placeholder="Enter Your Name"	required/></td>
 </tr>
 
 <tr>
@@ -174,7 +182,7 @@ cellspacing="2"border="1">
 <td>City</td>
 <td>
 
-<input type="text" name="city" pattern="[A-Za-z- ]+" title="only alphabet" required/>
+<input type="text" name="city" pattern="[A-Za-z-]+" title="only alphabet" required/>
 
 </td>
 </tr>
@@ -191,7 +199,7 @@ cellspacing="2"border="1">
 <tr>
 <td>MobileNo</td>
 <td>
-<input type="text" maxlength="10"   pattern="[789][0-9]{9}" name="mobile" id="mobile" placeholder="Enter 10 digit mobile" required>
+<input type="text" maxlength="10"   pattern="(7|8|9)\d{9}" name="mobile" id="mobile" placeholder="Enter 10 digit mobile" required>
 <div id="mid"></div>
 </td>
 </tr>

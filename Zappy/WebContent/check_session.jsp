@@ -9,6 +9,17 @@
 
 
 <head>
+
+
+
+<style type="text/css">
+
+body{
+background-image:url('https://imgur.com/rB8a2WY.jpg');
+background-size:cover;
+height:100%;
+}
+</style>
 <%  
  HttpSession customss=request.getSession();
 String customersession=(String)customss.getAttribute("CustomerSession");

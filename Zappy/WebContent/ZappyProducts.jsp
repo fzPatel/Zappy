@@ -187,7 +187,7 @@ out.println("<center>Welcome  "+s1+"</center>");
 					<td>
 					<form name="frm" action="AddCartContoller" method="post">
 					</br>
-								<center><h4>Product Name =  <%=ee.getPname()%></h4></center>
+								<center><h4>&nbsp;Product Name =  <%=ee.getPname()%>&nbsp;</h4></center>
 								<center><image src="images/<%=ee.getImage()%>" height="150" width="150"/><br/></center>
 								<center><b>Price</b>  = <%=ee.getPrice()%> INR<br/></center>
 								<center><b>Weight</b> = <%=ee.getWeight()%> Gram.<br/></center>
@@ -206,13 +206,15 @@ out.println("<center>Welcome  "+s1+"</center>");
 						<center><input type="hidden" value="<%=ee.getPid()%>" name="pid"/><center>
 						<center><input type="submit" class="button" value="View Product"/><center>
 						</form>
+						
 				</td>
+				
 			<%
 					}else{
 						%>
 						<td>
 							<form name="frm" action="AddCartContoller" method="post">									</br>
-								<center><h4>Product Name =  <%=ee.getPname()%></h4></center>
+								<center><h4>&nbsp;Product Name =<%=ee.getPname()%>&nbsp;</h4></center>
 								<center><image src="images/<%=ee.getImage()%>" height="150" width="150"/><br/></center>
 								<center><b>Price</b>  = <%=ee.getPrice()%> INR<br/></center>
 								<center><b>Weight</b> = <%=ee.getWeight()%> Gram<br/></center>

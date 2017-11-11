@@ -24,9 +24,17 @@ String s1=(String)s2.getAttribute("CustomerSession");
 
 input[type=number]{
     width: 40px;
+    background-color:#dee9f2;
 } 
-</style>
 
+.button {
+    color: white;
+
+ background-color: #325182;
+ }
+
+
+</style>
 
 </head>
 
@@ -108,8 +116,8 @@ you won’t believe it until you try it!
 <center><input type="hidden" value="<%=ee.getWeight()%>" name="pweight"/><center>
 <center><input type="hidden" value="<%=ee.getImage()%>" name="pimage"/><center>
 <center><input type="Number" min="1" value="1" name="addcartfield" required/></center>
-<center><input type="submit" value="Add to cart" name="cartbtn""/></center>
-
+<center><input type="submit" value="Add to cart" class="button" name="cartbtn""/></center>
+</br>
 																								
 								</center>
 							</form>

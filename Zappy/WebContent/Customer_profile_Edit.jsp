@@ -87,11 +87,11 @@ if(o instanceof Customer)
 
 <form action="Customer_update_profile" method="post">
 
-<tr><td>Name		:<input type="text" value="<%=ee.getCname()%>"  name="Cname" size="25"  pattern="[A-Za-z- ]+" title="only alphabet" required/></br></tr></tr>
-<tr><td>Mobile		:<input type="text" value="<%=ee.getMobile()%>" name="mobile" size="25"  maxlength="10"  pattern="[0-9]{10}" name="mobile" readonly="readonly"/></tr></tr>
+<tr><td>Name		:<input type="text" value="<%=ee.getCname()%>"  name="Cname" size="25"  pattern="[A-Za-z-]+" title="only alphabet" required/></br></tr></tr>
+<tr><td>Mobile		:<input type="text" value="<%=ee.getMobile()%>" name="mobile" size="25"  maxlength="10"  pattern="(7|8|9)\d{9}" name="mobile" readonly="readonly"/></tr></tr>
 <tr><td>Email ID 	:<input type="email" value="<%=ee.getEmail()%>"  name="email" size="25"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required/></tr></tr>
 <tr><td>Address 	:<input type="areatext" value="<%=ee.getAddress()%>"name="address" size="25"  required/></tr></tr>
-<tr><td>City 		:<input type="text" value="<%=ee.getCity()%>" name="city" size="25"  pattern="[A-Za-z- ]+" title="only alphabet" required/></tr></tr>
+<tr><td>City 		:<input type="text" value="<%=ee.getCity()%>" name="city" size="25"  pattern="[A-Za-z-]+" title="only alphabet" required/></tr></tr>
 <tr><td>State 	:<input type="text" value="<%=ee.getState()%>" name="state" size="25"  pattern="[A-Za-z- ]+" title="only alphabet" required/></tr></tr>
 <tr><td>Password	:<input type="text" value="<%=ee.getCpwd()%>" name="password" size="25" required/></tr></tr>
  
