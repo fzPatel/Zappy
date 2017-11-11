@@ -45,13 +45,23 @@ response.setDateHeader("Expires", 0);
 				url:'Ajax_onAddproductCheckSameName',
 				data:data,
 				type:'Get',
-				success:function(pid){
-				//	alert(eid);
-					$("#pid").html(pid);
-					if(pid!=0){
-					$("#submitbtnid").hide();
+				success:function(result)	{
+					
+					if(result.match(0))
+					{
+						 $("#pid").html("");
+
+					 $("#submitbtnid").prop('disabled', false);
+
 					}
+				else if(result.match(1))
+				{
+					 $("#pid").html("<font color=Red>Product Name Already Exist</font>");
+
+					 $("#submitbtnid").prop('disabled', true);
+
 				}
+			}
 				
 			});
 			
@@ -197,10 +207,8 @@ ${Ajaxmsg}</td>
 </tr>
 
 
-
-  <tr id="submitbtnid">
   <td>
-  <input  type="submit" value ="Update"/>
+  <input id="submitbtnid" type="submit" value ="Update"/>
   </td>
  </form>
  

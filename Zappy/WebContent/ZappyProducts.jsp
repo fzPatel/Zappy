@@ -12,10 +12,17 @@
 
 input[type=number]{
     width: 40px;
+    background-color:#dee9f2;
 } 
+
+.button {
+    color: white;
+
+ background-color: #325182;
+ }
+
+
 </style>
-
-
 
 <script type="text/javascript">
 
@@ -190,14 +197,14 @@ out.println("<center>Welcome  "+s1+"</center>");
 <center><input type="hidden" value="<%=ee.getImage()%>" name="pimage"/><center>
 <center><input type="hidden" value="<%=ee.getWeight()%>" name="pweight"/><center>
 
-<center><input type="Number" min="1" value="1" name="addcartfield" required/></center>
-<center><input type="submit" value="Add to cart" name="cartbtn" /></center>
+<center><input type="Number" min="1"  value="1" name="addcartfield" required/></center>
+<center><input type="submit" class="button" value="Add to cart" name="cartbtn" /></center>
 					
 						
 						</form>
 							<form action="viewproductdescription" method="post">
 						<center><input type="hidden" value="<%=ee.getPid()%>" name="pid"/><center>
-						<center><input type="submit" value="View Product"/><center>
+						<center><input type="submit" class="button" value="View Product"/><center>
 						</form>
 				</td>
 			<%
@@ -216,7 +223,7 @@ out.println("<center>Welcome  "+s1+"</center>");
 <center><input type="hidden" value="<%=ee.getWeight()%>" name="pweight"/><center>
 <center><input type="hidden" value="<%=ee.getImage()%>" name="pimage"/><center>
 <center><input type="Number" min="1" value="1" name="addcartfield" required/></center>
-<center><input type="submit" value="Add to cart" name="cartbtn""/></center>
+<center><input type="submit" class="button" value="Add to cart" name="cartbtn""/></center>
 
 																								
 								</center>
@@ -224,7 +231,7 @@ out.println("<center>Welcome  "+s1+"</center>");
 							
 						<form action="viewproductdescription" method="post">
 						<center><input type="hidden" value="<%=ee.getPid()%>" name="pid"/><center>
-						<center><input type="submit" value="View Product"/><center>
+						<center><input type="submit" class="button" value="View Product"/><center>
 						</form>
 						</td>
 						

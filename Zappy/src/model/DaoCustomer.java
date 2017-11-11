@@ -312,6 +312,28 @@ public int updateCustomer(Customer c){
 
 
 
+//Ajax ---Check customer email if already exist alert-----------
+
+	public int fatchemail(String email) 
+	{
+	int y=0;
+		try {
+			con=d.start();
+			ps=con.prepareStatement("select customer_email from customer_register where customer_email=?");
+			ps.setString(1,email);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next())
+			{	
+				y=1;	
+			}
+			} catch (Exception e) {
+			
+			System.out.println(e);
+		System.out.println(y);
+			}
+		
+		return y;
+		}
 
 
 }

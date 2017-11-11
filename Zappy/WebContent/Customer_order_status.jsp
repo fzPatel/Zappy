@@ -72,7 +72,7 @@ for(Adminbean ee:br)
 }
 else
 {
-	out.print("<h1>No order today</h1>");
+	out.print("<h1>Nothing in the OrderList !! </h1>");
 	
 }
 %>

@@ -35,17 +35,22 @@ public class Ajax_onAddproductCheckSameName extends HttpServlet {
 	
 		
 		int z=ad.fatchName(pname);
-		System.out.println("inside Ajax servlet");
+		PrintWriter out=response.getWriter();
 
+		System.out.println("inside Ajax servlet");
+/*
 		if(z!=0) 
 		{
 			
 			System.out.println("already exist");
 			
 			
-			PrintWriter out=response.getWriter();
 			out.println("Product already exist");
-		}
+		}*/
+		out.println(z);
+
+		
+		
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -58,15 +63,17 @@ public class Ajax_onAddproductCheckSameName extends HttpServlet {
 			int y=ad.fatchName(pname);
 			
 			System.out.println("inside Ajax servlet");
-			
+			PrintWriter out=response.getWriter();
+
+		/*	
 			if(y!=0) 
 			{
 		
-				PrintWriter out=response.getWriter();
 				out.println("Product already exist");
 					
-				}
-			
+				}*/
+			out.println(y);
+
 			
 	}
 

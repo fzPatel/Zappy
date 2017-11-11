@@ -49,12 +49,18 @@ System.out.println("Old pwd====="+oldp);
 
 System.out.println("x======" +x);
 
+
+System.out.println("inside Ajax servlet where x" +x);
+PrintWriter out=response.getWriter();
+
+out.println(x);
+
+/*
 if(x==0)
 
 {
 	PrintWriter out=response.getWriter();
-	out.println("Old Password does Not match");
-
+	
 }
 if(x!=1) {
 	
@@ -63,6 +69,7 @@ if(x!=1) {
 	
 	
 	doPost(request, response);
+*/
 }
 //
 //else if((oldpwd.equals(oldp))) {
@@ -75,7 +82,7 @@ if(x!=1) {
 //
 //	}
 //}
-}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

@@ -66,13 +66,18 @@ String CustomerSession=(String)ss.getAttribute("CustomerSession");%>
 <%@page import="java.util.ArrayList,bean.Adminbean"%>
 
 <%
+if(CustomerSession!=null)
+out.print("<h2>Welcome -  "+ CustomerSession+"  </h2>");
+else out.print("<h2>Welcome </h2>");
+
 double total=0;
 
 ArrayList<Adminbean> ar=(ArrayList<Adminbean>)request.getAttribute("LIST");
 
+
+
 if(!ar.isEmpty())
 {
-	out.print("<h2>Welcome -  "+ CustomerSession+"  </h2>");
 
 	%>
 	<table border="1">

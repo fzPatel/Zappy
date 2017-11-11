@@ -26,15 +26,23 @@
 				url:'Ajax_onAddproductCheckSameName',
 				data:data,
 				type:'post',
-				success:function(pid){
-				//	alert(eid);
-					$("#pid").html(pid);
-					if(pid!=0)
-						{
-						$("#submitbtnid").hide();
-						}
+				success:function(result)	{
+					
+					if(result.match(0))
+					{
+						 $("#pid").html("");
+
+					 $("#submitbtnid").prop('disabled', false);
+
+					}
+				else if(result.match(1))
+				{
+					 $("#pid").html("<font color=Red>Product Name Already Exist</font>");
+
+					 $("#submitbtnid").prop('disabled', true);
 
 				}
+			}
 				
 			});
 			
@@ -120,16 +128,14 @@ response.setDateHeader("Expires", 0);
 	      <li><a href="orderHistory">Order History</a></li>
 	       <li><a href="AdminViewPendingforDispachList">Pending list Order</a></li>
 	      <li><a href="AdminChangePwd.jsp">Change Pwd</a></li>
+	  	<li><a href="Logout">Logout</a></li>
+	      
       </ul>  
     </div>
   </div>
 </nav>
 
 
-<form action="Logout" method="post" align="right">
-
-   <input type="submit" value="Logout">
-</form>
 
  <form action="AddProductController" method="post" enctype="multipart/form-data">
  <center>

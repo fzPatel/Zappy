@@ -23,22 +23,79 @@
 				url:'CustomerRegistrationControlller',
 				data:data,
 				type:'get',
-				success:function(mid){
-				//	alert(eid);
-					$("#mid").html(mid);
-					if(mid!=0)
-					{
-					$("#submitbtnid").hide();
-					}
-					
-					
+			success:function(result)	{
+				
+				if(result.match(0))
+				{
+					 $("#mid").html("");
+
+				 $("#submitbtnid").prop('disabled', false);
+
 				}
+			else if(result.match(1))
+			{
+				 $("#mid").html("<font color=Red>Mobile Number already registerd</font>");
+
+				 $("#submitbtnid").prop('disabled', true);
+
+			}
+		}
+			
 				
 			});
 			
 		});
 		
 	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+$(document).ready(function(){
+		
+		$("#email").change(function(){
+			
+			var data = "email="+$("#email").val();
+			
+			$.ajax({
+				
+				url:'CustomerRegistrationAjaxCode',
+				data:data,
+				type:'Post',
+			success:function(result)	
+		{
+			
+				if(result.match(0))
+				{
+					 $("#emailmsg").html("");
+
+				 $("#submitbtnid").prop('disabled', false);
+
+				}
+			else if(result.match(1))
+			{
+				 $("#emailmsg").html("<font color=Red>E-MailId already registerd</font>");
+
+				 $("#submitbtnid").prop('disabled', true);
+
+			}
+		}
+			
+				
+			});
+			
+		});
+		
+	});
+
+	
+	
 
 </script>
 
@@ -99,7 +156,8 @@ cellspacing="2"border="1">
 <tr>
 <td>EmailId</td>
 <td>
-<input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Your Emailid" required/>
+<input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Your Emailid" required/>
+<div id="emailmsg"></div>
 </td>
 </tr>
 
@@ -110,7 +168,6 @@ cellspacing="2"border="1">
 <input type="text" name="address" required/>
 </td>
 </tr>
-
 
 
 <tr>

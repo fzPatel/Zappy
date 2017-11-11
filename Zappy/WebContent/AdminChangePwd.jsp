@@ -25,19 +25,23 @@
 				url:'AdminChangePwdServlet',
 				data:data,
 				type:'Get',
-				success:function(mid){
-				//	alert(eid);
-				
-					$("#mid").html(mid);
-				/* 	$("#confirmpassword").hide();
-					$("#newpassword").hide(); */
+				success:function(result)	{
 					
-					if(mid!=0){
-						
-						$("#submitbtnid").hide();
-						}
-				
+					if(result.match(1))
+					{
+						 $("#mid").html("");
+
+					 $("#submitbtnid").prop('disabled', false);
+
+					}
+				else if(result.match(0))
+				{
+					 $("#mid").html("<font color=Red>Old Password Not match</font>");
+
+					 $("#submitbtnid").prop('disabled', true);
+
 				}
+			}
 				
 			});
 			

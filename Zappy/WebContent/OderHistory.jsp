@@ -39,12 +39,8 @@ response.setDateHeader("Expires", 0);
 	        <li><a href="ViewProductContoller">View All Products</a></li>
 	      <li><a href="orderHistory">Order History</a></li>
 	       <li><a href="AdminViewPendingforDispachList">Pending list Order</a></li>
-     
- <li>
-  <form action="Logout" method="post">
-   <input type="submit" value="Logout">
-   </form>
-    </li>  
+          	       <li><a href="Logout">Logout</a></li>
+ 
       
       </ul>  
     </div>

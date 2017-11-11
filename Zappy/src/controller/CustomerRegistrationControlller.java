@@ -51,12 +51,10 @@ public class CustomerRegistrationControlller extends HttpServlet {
 	DaoCustomer d=new DaoCustomer();
 	
 	int x=d.fatchMobile(mobile);
-	
-if(x!=0) {
+
 			PrintWriter out=response.getWriter();
-			out.println("Mobile Number already registerd");
-				
-		}
+			out.println(x);
+
 //if(x==0) 
 //
 //{
@@ -76,15 +74,7 @@ if(x!=0) {
 
 		
 		
-		
-		
-		
-		
 }
-		
-		
-		
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name=request.getParameter("Cname");

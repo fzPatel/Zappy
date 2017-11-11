@@ -44,6 +44,8 @@ response.setDateHeader("Expires", 0);
 	      <li><a href="orderHistory">Order History</a></li>
 	       <li><a href="AdminViewPendingforDispachList">Pending list Order</a></li>
 	      <li><a href="AdminChangePwd.jsp">Change Pwd</a></li>
+	       <li><a href="Logout">Logout</a></li>
+	      
       </ul>  
     </div>
   </div>
